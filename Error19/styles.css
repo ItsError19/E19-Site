@@ -620,3 +620,570 @@ body {
         margin-top: 0.5rem;
     }
 }
+
+/* ============ Terminator Here Section ============ */
+.terminator-section {
+    background-color: #0a0a0a;
+    padding: 2rem;
+    border-top: 1px solid #ff3333;
+    border-bottom: 1px solid #ff3333;
+    position: relative;
+    overflow: hidden;
+}
+
+.terminator-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(255, 50, 50, 0.05) 0%,
+        transparent 20%,
+        transparent 80%,
+        rgba(255, 50, 50, 0.05) 100%
+    );
+    pointer-events: none;
+}
+
+.terminator-hud-display {
+    font-family: 'Orbitron', sans-serif;
+    color: #0f0;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.bottom-hud {
+    margin-top: 2rem;
+}
+
+.terminator-hud-line {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Terminator Grid Styles */
+.terminator-grid-container {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 50, 50, 0.2);
+}
+
+.terminator-grid {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+}
+
+.terminator-grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(to right, rgba(255, 50, 50, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 50, 50, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.terminator-grid-item {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.terminator-grid-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 50, 50, 0.1) 0%,
+        transparent 50%,
+        rgba(255, 50, 50, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+.terminator-grid-label {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.terminator-grid-data {
+    font-family: 'Orbitron', sans-serif;
+    color: #0f0;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+#div1 {
+    grid-area: 1 / 1 / 4 / 3;
+    background-color: rgba(16, 144, 49, 0.2);
+    border-top: 2px solid rgba(16, 144, 49, 0.5);
+}
+
+#div2 {
+    grid-area: 4 / 1 / 7 / 3;
+    background-color: rgba(58, 86, 36, 0.2);
+    border-bottom: 2px solid rgba(58, 86, 36, 0.5);
+}
+
+#div3 {
+    grid-area: 1 / 3 / 7 / 5;
+    background-color: rgba(241, 89, 72, 0.2);
+    border-left: 2px solid rgba(241, 89, 72, 0.5);
+    border-right: 2px solid rgba(241, 89, 72, 0.5);
+}
+
+#div4 {
+    grid-area: 1 / 5 / 7 / 7;
+    background-color: rgba(239, 37, 11, 0.2);
+    border-right: 2px solid rgba(239, 37, 11, 0.5);
+}
+
+/* Animation for grid items */
+.terminator-grid-item:hover {
+    background-color: rgba(255, 50, 50, 0.1) !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .terminator-grid {
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        min-height: 80vh;
+    }
+    
+    #div1 {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+    
+    #div2 {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+    
+    #div3 {
+        grid-area: 3 / 1 / 6 / 3;
+    }
+    
+    #div4 {
+        grid-area: 6 / 1 / 9 / 3;
+    }
+    
+    .terminator-grid-label {
+        font-size: 0.9rem;
+    }
+    
+    .terminator-grid-data {
+        font-size: 0.7rem;
+    }
+}
+
+/* ============ Terminator 3D Cube ============ */
+.terminator-cube-container {
+    width: 100%;
+    height: 80%;
+    perspective: 800px;
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.terminator-cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: terminator-rotate 15s infinite linear;
+    transform: rotateX(15deg) rotateY(15deg);
+}
+
+.terminator-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    border: 2px solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(255, 50, 50, 0.8) 0%,
+        rgba(255, 100, 100, 0.8) 50%,
+        rgba(255, 50, 50, 0.8) 100%
+    );
+    border-image-slice: 1;
+    box-shadow: 0 0 20px rgba(255, 50, 50, 0.5);
+    background-color: rgba(255, 50, 50, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.terminator-face.front {
+    transform: translateZ(50%);
+    background: linear-gradient(160deg, rgba(255, 50, 50, 0.3) 0%, rgba(255, 100, 100, 0.1) 100%);
+}
+
+.terminator-face.back {
+    transform: rotateY(180deg) translateZ(50%);
+    background: linear-gradient(160deg, rgba(255, 50, 50, 0.3) 0%, rgba(255, 100, 100, 0.1) 100%);
+}
+
+.terminator-face.right {
+    transform: rotateY(90deg) translateZ(50%);
+    background: linear-gradient(160deg, rgba(255, 50, 50, 0.3) 0%, rgba(255, 100, 100, 0.1) 100%);
+}
+
+.terminator-face.left {
+    transform: rotateY(-90deg) translateZ(50%);
+    background: linear-gradient(160deg, rgba(255, 50, 50, 0.3) 0%, rgba(255, 100, 100, 0.1) 100%);
+}
+
+.terminator-face.top {
+    transform: rotateX(90deg) translateZ(50%);
+    background: linear-gradient(160deg, rgba(255, 50, 50, 0.3) 0%, rgba(255, 100, 100, 0.1) 100%);
+}
+
+.terminator-face.bottom {
+    transform: rotateX(-90deg) translateZ(50%);
+    background: linear-gradient(160deg, rgba(255, 50, 50, 0.3) 0%, rgba(255, 100, 100, 0.1) 100%);
+}
+
+.terminator-grid-item:hover .terminator-cube {
+    animation-play-state: paused;
+}
+
+@keyframes terminator-rotate {
+    0% {
+        transform: rotateX(15deg) rotateY(15deg) rotateZ(0);
+    }
+    100% {
+        transform: rotateX(375deg) rotateY(375deg) rotateZ(0);
+    }
+}
+
+/* Responsive adjustments for cube */
+@media (max-width: 992px) {
+    .terminator-cube-container {
+        height: 60%;
+    }
+    
+    .terminator-cube {
+        animation: terminator-rotate-mobile 15s infinite linear;
+    }
+    
+    @keyframes terminator-rotate-mobile {
+        0% {
+            transform: rotateX(0) rotateY(15deg) rotateZ(0);
+        }
+        100% {
+            transform: rotateX(0) rotateY(375deg) rotateZ(0);
+        }
+    }
+}
+
+/* ============ Terminator 3D Cube ============ */
+.terminator-cube-container {
+    width: 100%;
+    height: 80%;
+    perspective: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.terminator-cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: terminator-rotate 20s infinite linear;
+}
+
+.terminator-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #0f0;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0.9;
+    border: 2px solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.1) 0%,
+        rgba(255, 50, 50, 0.7) 50%,
+        rgba(255, 0, 0, 0.1) 100%
+    );
+    border-image-slice: 1;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.cube-text {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    font-weight: bold;
+    transform: translateZ(30px);
+}
+
+.terminator-face.front {
+    transform: translateZ(50px);
+    background: rgba(16, 144, 49, 0.1);
+}
+
+.terminator-face.back {
+    transform: rotateY(180deg) translateZ(50px);
+    background: rgba(16, 144, 49, 0.1);
+}
+
+.terminator-face.right {
+    transform: rotateY(90deg) translateZ(50px);
+    background: rgba(255, 50, 50, 0.1);
+}
+
+.terminator-face.left {
+    transform: rotateY(-90deg) translateZ(50px);
+    background: rgba(255, 50, 50, 0.1);
+}
+
+.terminator-face.top {
+    transform: rotateX(90deg) translateZ(50px);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.terminator-face.bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.terminator-cube-container:hover .terminator-cube {
+    animation-play-state: paused;
+}
+
+.terminator-cube-container:hover .terminator-face {
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.7);
+    background: rgba(255, 50, 50, 0.2);
+}
+
+@keyframes terminator-rotate {
+    0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    25% {
+        transform: rotateX(90deg) rotateY(180deg) rotateZ(0);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg);
+    }
+    75% {
+        transform: rotateX(270deg) rotateY(90deg) rotateZ(180deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .terminator-cube-container {
+        height: 200px;
+    }
+    
+    .cube-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Enhanced HUD Typing Effect */
+.terminator-hud-display {
+    font-family: 'Orbitron', sans-serif;
+    color: #0f0;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminator-hud-line {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    height: 1.2rem;
+    position: relative;
+}
+
+.terminator-hud-line::after {
+    content: "|";
+    position: absolute;
+    animation: terminator-blink 0.7s infinite;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+@keyframes terminator-blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Scanning beam effect */
+.terminator-hud-display::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 0, 0.1) 50%,
+        transparent 100%
+    );
+    animation: terminator-scan 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes terminator-scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Enhanced HUD Typing Effect */
+.terminator-hud-display {
+    font-family: 'Orbitron', sans-serif;
+    color: #0f0;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminator-hud-line {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    height: 1.2rem;
+    position: relative;
+}
+
+.terminator-hud-line::after {
+    content: "|";
+    position: absolute;
+    animation: terminator-blink 0.7s infinite;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+@keyframes terminator-blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Scanning beam effect */
+.terminator-hud-display::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 0, 0.1) 50%,
+        transparent 100%
+    );
+    animation: terminator-scan 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes terminator-scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Glitch Effect */
+.terminator-glitch {
+    position: relative;
+}
+
+.terminator-glitch::before,
+.terminator-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.terminator-glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: terminator-glitch-anim 0.5s infinite linear alternate-reverse;
+}
+
+.terminator-glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: terminator-glitch-anim2 0.5s infinite linear alternate-reverse;
+}
+
+@keyframes terminator-glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(112px, 9999px, 76px, 0); }
+    40% { clip: rect(75px, 9999px, 107px, 0); }
+    60% { clip: rect(98px, 9999px, 109px, 0); }
+    80% { clip: rect(95px, 9999px, 52px, 0); }
+    100% { clip: rect(31px, 9999px, 113px, 0); }
+}
+
+@keyframes terminator-glitch-anim2 {
+    0% { clip: rect(112px, 9999px, 76px, 0); }
+    20% { clip: rect(85px, 9999px, 66px, 0); }
+    40% { clip: rect(106px, 9999px, 71px, 0); }
+    60% { clip: rect(91px, 9999px, 103px, 0); }
+    80% { clip: rect(127px, 9999px, 122px, 0); }
+    100% { clip: rect(74px, 9999px, 103px, 0); }
+}

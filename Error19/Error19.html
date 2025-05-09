@@ -51,13 +51,13 @@
         <div class="collapse navbar-collapse terminator-menu" id="navbarNav">
             <ul class="navbar-nav mx-auto terminator-nav-list">
                 <li class="nav-item terminator-nav-item">
-                    <a class="nav-link terminator-link" href="#">
+                    <a class="nav-link terminator-link active" href="#">
                         <span class="terminator-link-prefix">></span> HOME
                         <span class="terminator-link-status">[ACTIVE]</span>
                     </a>
                 </li>
                 <li class="nav-item terminator-nav-item">
-                    <a class="nav-link terminator-link" href="#">
+                    <a class="nav-link terminator-link" href="#here-section">
                         <span class="terminator-link-prefix">></span> ABOUT
                         <span class="terminator-link-status">[STANDBY]</span>
                     </a>
@@ -77,6 +77,65 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Here Section with Terminator Grid -->
+    <section id="here-section" class="terminator-section">
+        <div class="terminator-hud-display">
+            <div class="terminator-hud-line">> SYSTEM SCAN INITIATED</div>
+            <div class="terminator-hud-line">> TARGET GRID LAYOUT DETECTED</div>
+            <div class="terminator-hud-line">> RENDERING VISUAL COMPONENTS</div>
+        </div>
+        
+        <div class="terminator-grid-container">
+            <div class="terminator-grid" id="section-1">
+                <div class="terminator-grid-item" id="div1">
+				<div class="terminator-grid-label">SECTOR 1</div>
+    <div class="terminator-cube-container">
+        <div class="terminator-cube">
+            <div class="terminator-face front">
+                <span class="cube-text">SYSTEM</span>
+            </div>
+            <div class="terminator-face back">
+                <span class="cube-text">ONLINE</span>
+            </div>
+            <div class="terminator-face right">
+                <span class="cube-text">T-800</span>
+            </div>
+            <div class="terminator-face left">
+                <span class="cube-text">v4.2.1</span>
+            </div>
+            <div class="terminator-face top">
+                <span class="cube-text">SKYNET</span>
+            </div>
+            <div class="terminator-face bottom">
+                <span class="cube-text">2029</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="terminator-grid-data">STATUS: ACTIVE</div>
+</div>
+                <div class="terminator-grid-item" id="div2">
+                    <div class="terminator-grid-label">SECTOR 2</div>
+                    <div class="terminator-grid-data">STATUS: ONLINE</div>
+                </div>
+                <div class="terminator-grid-item" id="div3">
+                    <div class="terminator-grid-label">CORE PROCESSOR</div>
+                    <div class="terminator-grid-data">STATUS: ACTIVE</div>
+                </div>
+                <div class="terminator-grid-item" id="div4">
+                    <div class="terminator-grid-label">SECURITY GRID</div>
+                    <div class="terminator-grid-data">STATUS: ARMED</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terminator-hud-display bottom-hud">
+            <div class="terminator-hud-line">> GRID SYSTEM READY</div>
+            <div class="terminator-hud-line">> ALL SYSTEMS NOMINAL</div>
+            <div class="terminator-hud-line">> AWAITING USER INPUT</div>
+        </div>
+    </section>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
