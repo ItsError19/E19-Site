@@ -364,3 +364,24 @@ function useFallbackCopyMethod(text) {
     document.body.removeChild(textArea);
 }
 
+// Typing Effect Script
+const bioText = ">PROFILE...\n> CODE NAME:[Error]\n> ROLE:SOFTWARE ENGINEER\n> SPECIALIZATION:FULL-STACK DEVELOPMENT\n> CURRENT MISSION: BUILDING TERMINATOR UI SYSTEMS\n> STATUS: [ACTIVE]";
+const typingElement = document.getElementById('typing-output');
+const cursorElement = document.querySelector('.typing-cursor');
+
+function typeWriter(text, i, fnCallback) {
+    if (i < text.length) {
+        typingElement.innerHTML = text.substring(0, i+1) + (i % 3 ? '_' : '');
+        setTimeout(() => typeWriter(text, i + 1, fnCallback), Math.random() * 50 + 30);
+    } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, 700);
+        cursorElement.style.animation = 'term-blink 1s step-end infinite';
+    }
+}
+
+// Start typing animation when page loads
+window.addEventListener('DOMContentLoaded', () => {
+    typeWriter(bioText, 0, () => {
+        typingElement.innerHTML = bioText;
+    });
+});

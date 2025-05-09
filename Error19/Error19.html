@@ -152,10 +152,62 @@
     </div>
     <div class="terminator-grid-data">TERMINAL ACTIVE</div>
 </div>
+<!-- CORE PROCESSOR 3 -->
                 <div class="terminator-grid-item" id="div3">
-                    <div class="terminator-grid-label">CORE PROCESSOR</div>
-                    <div class="terminator-grid-data">STATUS: ACTIVE</div>
+    <div class="terminator-grid-label">CORE PROCESSOR</div>
+    
+    <div class="terminator-dev-container">
+        <!-- Profile Section -->
+        <div class="terminator-profile">
+            <div class="terminator-avatar">
+                <img src="imgabout00.jpg" alt="Developer" class="avatar-img">
+                <div class="avatar-overlay"></div>
+            </div>
+            <div class="terminator-bio">
+                <div class="typing-container">
+                    <p class="typing-text" id="typing-output"></p>
+                    <span class="typing-cursor">|</span>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Code Editor -->
+        <div class="terminator-code-window">
+            <div class="term-titlebar">
+                <span class="term-buttons">
+                    <button class="term-btn term-btn-min">
+                        <svg x="0px" y="0px" viewBox="0 0 10.2 1"><rect x="0" y="50%" width="10.2" height="1"></rect></svg>
+                    </button>
+                    <button class="term-btn term-btn-max">
+                        <svg viewBox="0 0 10 10"><path d="M0,0v10h10V0H0z M9,9H1V1h8V9z"></path></svg>
+                    </button>
+                    <button class="term-btn term-btn-close">
+                        <svg viewBox="0 0 10 10"><polygon points="10.2,0.7 9.5,0 5.1,4.4 0.7,0 0,0.7 4.4,5.1 0,9.5 0.7,10.2 5.1,5.8 9.5,10.2 10.2,9.5 5.8,5.1"></polygon></svg>
+                    </button>
+                </span>
+                <span class="term-filename">core_process.cpp</span>
+            </div>
+            <div class="terminator-code">
+                <pre><code><span class="code-include">#include</span> <span class="code-header">&lt;iostream&gt;</span>
+<span class="code-keyword">using</span> <span class="code-namespace">namespace</span> <span class="code-std">std</span><span class="code-semicolon">;</span>
+
+<span class="code-keyword">int</span> <span class="code-function">main</span><span class="code-bracket">()</span> <span class="code-curly">{</span>
+
+    <span class="code-comment">// Core Processor Initialization</span>
+    <span class="code-keyword">cout</span> <span class="code-operator">&lt;&lt;</span> <span class="code-string">"SYSTEM STATUS: [</span><span class="code-value">ACTIVE</span><span class="code-string">]"</span> <span class="code-operator">&lt;&lt;</span> <span class="code-std">endl</span><span class="code-semicolon">;</span>
+    <span class="code-keyword">cout</span> <span class="code-operator">&lt;&lt;</span> <span class="code-string">"DEVELOPER MODE: [</span><span class="code-value">ENGAGED</span><span class="code-string">]"</span> <span class="code-operator">&lt;&lt;</span> <span class="code-std">endl</span><span class="code-semicolon">;</span>
+    
+    <span class="code-keyword">return</span> <span class="code-number">0</span><span class="code-semicolon">;</span>
+
+<span class="code-curly">}</span></code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div class="terminator-grid-data">STATUS: ACTIVE</div>
+</div>
+<!-- SECURITY GRID 4 -->
+
                 <div class="terminator-grid-item" id="div4">
                     <div class="terminator-grid-label">SECURITY GRID</div>
                     <div class="terminator-grid-data">STATUS: ARMED</div>
