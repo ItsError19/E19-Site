@@ -88,6 +88,7 @@
         
         <div class="terminator-grid-container">
             <div class="terminator-grid" id="section-1">
+			<!-- sector 1 -->
                 <div class="terminator-grid-item" id="div1">
 				<div class="terminator-grid-label">SECTOR 1</div>
     <div class="terminator-cube-container">
@@ -115,10 +116,42 @@
     
     <div class="terminator-grid-data">STATUS: ACTIVE</div>
 </div>
-                <div class="terminator-grid-item" id="div2">
-                    <div class="terminator-grid-label">SECTOR 2</div>
-                    <div class="terminator-grid-data">STATUS: ONLINE</div>
-                </div>
+<!-- sector 2 -->
+    <div class="terminator-grid-item" id="div2">
+    <div class="terminator-grid-label">SECTOR 2</div>
+    <div class="terminator-terminal">
+        <div class="term-header">
+            <div class="term-buttons">
+                <span class="term-btn term-btn-close"></span>
+                <span class="term-btn term-btn-min"></span>
+                <span class="term-btn term-btn-max"></span>
+            </div>
+            <div class="term-title">SYSTEM TERMINAL [ROOT ACCESS]</div>
+            <div class="term-tab">++</div>
+        </div>
+        <div class="term-body">
+            <div class="term-line">
+                <span class="term-prompt">root@E-19:~$</span> 
+                <span class="term-command">initiate_sector_scan</span>
+                <span class="term-cursor">█</span>
+            </div>
+            <div class="term-line">
+                > SCANNING SECTOR 2...
+            </div>
+            <div class="term-line">
+                > TARGETS ACQUIRED: <span class="term-highlight">12</span>
+            </div>
+            <div class="term-line">
+                > STATUS: <span class="term-status">ONLINE</span>
+            </div>
+            <div class="term-line">
+                <span class="term-prompt">root@skynet:~$</span> 
+                <span class="term-cursor blink">█</span>
+            </div>
+        </div>
+    </div>
+    <div class="terminator-grid-data">TERMINAL ACTIVE</div>
+</div>
                 <div class="terminator-grid-item" id="div3">
                     <div class="terminator-grid-label">CORE PROCESSOR</div>
                     <div class="terminator-grid-data">STATUS: ACTIVE</div>
